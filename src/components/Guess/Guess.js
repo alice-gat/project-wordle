@@ -1,10 +1,12 @@
 import React from "react";
 
-const Guess = ({ letters }) => (
+import { range } from "../../utils";
+
+const Guess = ({ value }) => (
   <p className="guess">
-    {letters.map((letter, index) => (
-      <span key={index} className="cell">
-        {letter}
+    {range(5).map((num) => (
+      <span key={num} className="cell">
+        {value ? value[num] : ""}
       </span>
     ))}
   </p>

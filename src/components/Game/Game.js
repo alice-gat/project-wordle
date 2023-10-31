@@ -13,13 +13,7 @@ console.info({ answer });
 
 const Game = () => {
   const [guesses, setGuesses] = useState([]);
-  const handleSubmitGuess = (text) => {
-    if (guesses.length < NUM_OF_GUESSES_ALLOWED) {
-      setGuesses([...guesses, text]);
-    } else {
-      window.alert("No more guesses allowed");
-    }
-  };
+  const handleSubmitGuess = (text) => setGuesses([...guesses, text]);
 
   return (
     <>
