@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const Input = ({ handleSubmitGuess }) => {
-  const [value, setValue] = useState("");
+const Input = ({ handleSubmitGuess, disabled }) => {
+  const [value, setValue] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSubmitGuess(value);
-    setValue("");
+    setValue('');
   };
 
   return (
@@ -25,6 +25,7 @@ const Input = ({ handleSubmitGuess }) => {
           required
           pattern="[a-zA-Z]{5}" // Fall back for issues with minLength not working with modified input text
           title="You must guess a 5 letter word"
+          disabled={disabled}
         />
       </form>
     </>
