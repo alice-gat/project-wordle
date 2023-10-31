@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const Input = () => {
+const Input = ({ handleSubmitGuess }) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
+    handleSubmitGuess(value);
     setValue("");
   };
 
@@ -23,7 +23,7 @@ const Input = () => {
             setValue(e.target.value.toUpperCase());
           }}
           required
-          pattern="[a-zA-Z]{5}"
+          pattern="[a-zA-Z]{5}" // Fall back for issues with minLength not working with modified input text
           title="You must guess a 5 letter word"
         />
       </form>
