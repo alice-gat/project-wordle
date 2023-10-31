@@ -1,11 +1,13 @@
 import React from 'react';
 
+import Banner from '../Banner';
+
 const LoseBanner = ({ answer }) => (
-  <div className="sad banner">
+  <Banner status="sad">
     <p>
       Sorry, the correct answer is <strong>{answer}</strong>.
     </p>
-  </div>
+  </Banner>
 );
 
 export default LoseBanner;
